@@ -3,6 +3,7 @@ const main_page = document.querySelector(".main-page");
 const add = document.querySelector(".settings-page__container_title__add-chord");
 
 const codename = document.querySelector(".code_name");
+const formname = document.querySelector(".form_name");
 const container = document.querySelector(".settings-page__container:nth-child(2)");
 const container_codes = document.createElement("div");
 const container_notes =document.querySelectorAll(".settings-page__container-codes");
@@ -19,8 +20,8 @@ const KEY ="satkey";
 let piano_codes_storage = [];
 
 const piano_codes_active = [{display:'C',sounds:'C',id:Date.now()},
-{display:'Db',sounds:'C',id:Date.now()},
-{display:'D',sounds:'D Flat',id:Date.now()},
+{display:'Db',sounds:'D Flat',id:Date.now()},
+{display:'D',sounds:'D',id:Date.now()},
 {display:'Eb',sounds:'E Flat',id:Date.now()},
 {display:'E',sounds:'E',id:Date.now()},
 {display:'F',sounds:'F',id:Date.now()},
@@ -33,11 +34,17 @@ const piano_codes_active = [{display:'C',sounds:'C',id:Date.now()},
 {display:'Maj7',sounds:'Major seven',id:Date.now()},
 {display:'min7',sounds:'Minor seven',id:Date.now()},
 {display:'7',sounds:'seven',id:Date.now()},
+{display:'C#',sounds:'C sharp',id:Date.now()},
+{display:'D#',sounds:'D sharp',id:Date.now()},
+{display:'F#',sounds:'F sharp',id:Date.now()},
+{display:'G#',sounds:'G sharp',id:Date.now()},
+{display:'A#',sounds:'A sharp',id:Date.now()},
 ];
 
-const piano_codes_unactive = []
+const piano_codes_unactive = [];
 
-
+const piano_form_active = [{display:'A form'},{display:'B form'}];
+const piano_form_unactive = [];
 
 
 
@@ -140,6 +147,7 @@ function start(){
     main_page.classList.remove(HIDDEN);
     back_icon.classList.remove(HIDDEN);
 
+    setInterval(changeform, bpm);
     setInterval(changetext, bpm);
     setInterval(click, bpm);
  
@@ -158,6 +166,11 @@ function changetext(){
     txtInput.value = (`${piano_codes_active[picknumber].sounds}`);
 }
 
+function changeform(){
+
+    const pickform = Math.floor(Math.random()*piano_form_active.length);
+    formname.innerText = (`${piano_form_active[pickform].display}`);
+}
 
 
 function click(){

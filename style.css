@@ -1,4 +1,4 @@
-body{
+body {
   width: 100%;
   height: 100vh;
   background-color: black;
@@ -8,8 +8,8 @@ body{
   position: relative;
 }
 
-.main-page{
-  color:white;
+.main-page {
+  color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -17,11 +17,8 @@ body{
   align-items: center;
 }
 
-
-
-
-.header-page__Auto-Mode{
-  background-color: #ADD8E5;
+.header-page__Auto-Mode {
+  background-color: #add8e5;
   margin: 0 auto;
   cursor: pointer;
   text-align: center;
@@ -35,12 +32,9 @@ body{
   padding: 0.5vw;
   border-radius: 0.5vw;
   margin-bottom: 11vh;
-
 }
 
-
 .setting-icon i {
-
   color: white;
   position: absolute;
   right: 0;
@@ -51,7 +45,7 @@ body{
   margin-top: 55px;
 }
 
-.back-icon i{
+.back-icon i {
   color: white;
   position: absolute;
   left: 0;
@@ -59,16 +53,13 @@ body{
   margin: 42px;
   cursor: pointer;
   font-size: 50px;
-
 }
 
 .hidden {
   display: none;
 }
 
-
-
-header{
+header {
   width: 100%;
   height: 100vh;
   display: flex;
@@ -76,19 +67,18 @@ header{
   align-items: center;
 }
 
-.code_name{
+.code_name {
   width: 100%;
-  font-size: 44vh;
+  font-size: 29vh;
   font-weight: 500;
-  height: 45vh;
+  height: 27vh;
   text-align: center;
-
 }
 
-#txtInput{
+#txtInput {
   display: none;
 }
-.settings-page__title__title{
+.settings-page__title__title {
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -96,38 +86,33 @@ header{
   font-size: 5vw;
   margin-bottom: 5vw;
   margin-left: 7vh;
-
 }
-.settings-page__title{
-  color:white;
+.settings-page__title {
+  color: white;
   display: flex;
   flex-direction: column;
   text-align: center;
   color: aquamarine;
 }
 
-.settings-page__container__group{
+.settings-page__container__group {
   display: flex;
   margin-bottom: 2vh;
 }
 
-.settings-page__container__group__group{
+.settings-page__container__group__group {
   display: flex;
   flex-direction: column;
 }
 
-
-
-
-.settings-page__container{
+.settings-page__container {
   text-align: left;
   width: 40vw;
   display: inline-block;
   word-spacing: 0px;
-
 }
 
-.settings-page__container-codes{
+.settings-page__container-codes {
   text-align: center;
   display: inline-block;
   background-color: #444;
@@ -142,19 +127,24 @@ header{
   border-radius: 0.5vw;
   margin-right: 0.75vw;
   transition: all 0.3s ease-in-out;
-  cursor:pointer;
+  cursor: pointer;
 }
-.settings-page__container_title{
+.settings-page__container_title {
   margin: 0;
-    display: inline-block;
-    vertical-align: top;
-    color: white;
-    font-size: 3vw;
-    width: 15vw;
-    text-align: left;
-    margin-top: 1.25vw;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  font-size: 3vw;
+  width: 15vw;
+  text-align: left;
+  margin-top: 1.25vw;
 }
 
-.activee{
+.activee {
   background-color: blanchedalmond;
+}
+
+.form_name {
+  font-size: 8vh;
+  margin: 3vh;
 }
