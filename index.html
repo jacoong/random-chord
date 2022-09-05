@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div class="back-icon hidden">
+        <i class="fa-solid fa-arrow-left"></i>
+    </div>
+
+    <div class="setting-icon">
+        <i class="fa-solid fa-gear fa-xl"></i>
+    </div>
+    
+    <header class="header-page__Auto-Mode">
+            Start
+    </header>
+
+
+
+
+
+    <main class="main-page hidden">
+
+
+        <div class="code_name"></div>
+        Select Voice: 
+        <select id='voiceList'></select> <br><br>
+        <input id='txtInput' /> <br><br>    
+        <button id='btnSpeak' class="hidden">Speak!</button>
+
+        
+    </main>
+
+
+
+
+
+
+    <div class="settings-page hidden">
+
+
+
+        <div class="settings-page__title">
+            <div class="settings-page__title__title">
+                Settings
+            </div>
+
+            <div class="settings-page__container__group">
+                <span class="settings-page__container_title">Notes</span>
+                <div class="settings-page__container">
+                
+                <div class="settings-page__container-codes activee">C</div>
+                <div class="settings-page__container-codes activee">Db</div>
+                <div class="settings-page__container-codes activee">D</div>
+                <div class="settings-page__container-codes activee">Eb</div>
+                <div class="settings-page__container-codes activee">E</div>
+                <div class="settings-page__container-codes activee">F</div>
+                <div class="settings-page__container-codes activee">Gb</div>
+                <div class="settings-page__container-codes activee">G</div>
+                <div class="settings-page__container-codes activee">Ab</div>
+                <div class="settings-page__container-codes activee">A</div>
+                <div class="settings-page__container-codes activee">Bb</div>
+                <div class="settings-page__container-codes activee">B</div>
+            </div>
+
+        </div>
+
+        <div class="settings-page__container__group">
+            <div class="settings-page__container__group__group">
+                <span class="settings-page__container_title">Chords</span>
+                <span class="settings-page__container_title__add-chord">add</span>
+            </div>
+            <div class="settings-page__container">
+                
+                
+                <div class="settings-page__container-codes activee">Maj7</div>
+                <div class="settings-page__container-codes activee">min7</div>
+                <div class="settings-page__container-codes activee">7</div>
+            </div>
+        </div>
+  
+
+            <h4></h4>
+            <h4></h4>
+        </div>
+
+    </div>
+
+
+    <script src="tts.js"></script>
+    <script src="setting.js"></script>
+    <script src="https://kit.fontawesome.com/277fae2850.js" crossorigin="anonymous"></script>
+</body>
+</html>
