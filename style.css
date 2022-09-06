@@ -41,7 +41,7 @@ body {
   top: 10px;
   margin: 42px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 5vh;
   margin-top: 55px;
 }
 
@@ -52,7 +52,7 @@ body {
   top: 0px;
   margin: 42px;
   cursor: pointer;
-  font-size: 50px;
+  font-size: 5vh;
 }
 
 .hidden {
@@ -69,12 +69,13 @@ header {
 
 .code_name {
   width: 100%;
-  font-size: 29vh;
+  font-size: 10vh;
   font-weight: 500;
-  height: 27vh;
+  height: 10vh;
   text-align: center;
-  margin-top: 50vh;
+  margin-top: 20vh;
 }
+
 
 #txtInput {
   display: none;
@@ -152,17 +153,14 @@ header {
 
 
 .pre_code_name{
-  font-size: 10vh;
-  margin-top: 3vh;
+  font-size: 5.5vh;
+  margin-top: 8vh;
 }
 
-.pre_code_name{
-  font-size: 10vh;
-  margin-top:8vh;
-}
+
 
 .pre_form_name{
-  font-size: 7vh;
+  font-size: 4vh;
   margin-top: 0.25vh;
   }
 
