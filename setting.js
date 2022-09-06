@@ -28,15 +28,15 @@ const piano_Notes_active = [{display:'C',sounds:'C',id:Date.now()},
 {display:'F',sounds:'F',id:Date.now()},
 {display:'Gb',sounds:'G Flat',id:Date.now()},
 {display:'G',sounds:'G',id:Date.now()},
-{display:'Ab',sounds:'A Flat',id:Date.now()},
-{display:'A',sounds:'A',id:Date.now()},
+{display:'Ab',sounds:'Ae Flat',id:Date.now()},
+{display:'A',sounds:'Ae',id:Date.now()},
 {display:'Bb',sounds:'B Flat',id:Date.now()},
 {display:'B',sounds:'B',id:Date.now()},
 {display:'C#',sounds:'C sharp',id:Date.now()},
 {display:'D#',sounds:'D sharp',id:Date.now()},
 {display:'F#',sounds:'F sharp',id:Date.now()},
 {display:'G#',sounds:'G sharp',id:Date.now()},
-{display:'A#',sounds:'A sharp',id:Date.now()},
+{display:'A#',sounds:'Ae sharp',id:Date.now()},
 ];
 const piano_Notes_unactive = [];
 
@@ -254,6 +254,7 @@ function lord_setting_page(){
     if (main_page.classList.contains(HIDDEN)){
         setting_icon.classList.add(HIDDEN);
     }
+
 
 }
 

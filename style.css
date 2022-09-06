@@ -69,17 +69,19 @@ header {
 
 .code_name {
   width: 100%;
-  font-size: 16vh;
+  font-size: 22vmin;
   font-weight: 500;
-  height: 10vh;
+  height: 8vh;
   text-align: center;
-  margin-top: 20vh;
+  padding-top: 21vmin;
 }
 
 
 #txtInput {
   display: none;
 }
+
+
 .settings-page__title__title {
   display: flex;
   justify-content: center;
@@ -90,11 +92,11 @@ header {
   margin-left: 7vh;
 }
 .settings-page__title {
-  color: white;
   display: flex;
   flex-direction: column;
   text-align: center;
   color: aquamarine;
+  margin-top:1px;
 }
 
 .settings-page__container__group {
@@ -142,25 +144,39 @@ header {
   margin-top: 1.25vw;
 }
 
+.settings-page__container_title__add-chord{
+  color:aquamarine;
+  cursor: pointer;
+  text-align: center;
+}
+
 .activee {
   background-color: blanchedalmond;
 }
 
 .form_name {
-  font-size: 10vh;
-  margin: 8vh;
+  font-size: 15vmin;
+  margin-top: 15vmin;
+
 }
 
 
 .pre_code_name{
   font-size: 5.5vh;
   margin-top: 8vh;
+  color: #888;
 }
 
 
 
 .pre_form_name{
   font-size: 4vh;
-  margin-top: 0.25vh;
+  margin-bottom: 10vmin;
+  color: #888;
   }
 
+
+.settings-page{
+  width: 55vw;
+    height: 36vh;
+}
