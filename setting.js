@@ -5,6 +5,7 @@ const add = document.querySelector(".settings-page__container_title__add-chord")
 const codename = document.querySelector(".code_name");
 const formname = document.querySelector(".form_name");
 const precodename = document.querySelector(".pre_code_name");
+const preformname = document.querySelector(".pre_form_name");
 const container = document.querySelector(".settings-page__container:nth-child(2)");
 const container_notes =document.querySelectorAll(".settings-page__container-codes");
 const container_codes =document.querySelectorAll(".settings-page__container-codes");
@@ -49,6 +50,8 @@ const piano_Chords_unactive = [];
 const piano_form_active = [{display:'A form'},{display:'B form'}];
 
 const piano_form_unactive = [];
+
+let precodes = [-1,-1,-1];
 
 
 
@@ -194,7 +197,9 @@ function start(){
     
     prechangetext();
     setInterval(prechangetext, bpm);
+    setInterval(changetext, bpm);
     setInterval(click, bpm);
+
   
 
 
@@ -207,15 +212,31 @@ function prechangetext(){
     const prepickcchordsnumber = Math.floor(Math.random()*piano_Chords_active.length);
     const prepickform = Math.floor(Math.random()*piano_form_active.length);
     precodename.innerText = (`${piano_Notes_active[prepicknotesnumber].display}${piano_Chords_active[prepickcchordsnumber].display}`);
-    return changetext(prepicknotesnumber,prepickcchordsnumber,prepickform);
+    preformname.innerText = (`${piano_form_active[prepickform].display}`);
+    precodes.push(prepicknotesnumber,prepickcchordsnumber,prepickform);
+    console.log(prepicknotesnumber,prepickcchordsnumber,prepickform);
+    console.log(precodes);
+
 }
 
-function changetext(prepicknotesnumber,prepickcchordsnumber,prepickform){
+function changetext(){
 
+    const picknotesnumber = precodes[precodes.length-6];
+    const pickcchordsnumber = precodes[precodes.length-5];
+    const pickform = precodes[precodes.length-4];
+    console.log(picknotesnumber);
+    console.log(pickcchordsnumber);
+    console.log(pickform);
+ 
 
-    codename.innerText = (`${piano_Notes_active[prepicknotesnumber].display}${piano_Chords_active[prepickcchordsnumber].display}`);
-    txtInput.value = (`${piano_Notes_active[prepicknotesnumber].sounds} ${piano_Chords_active[prepickcchordsnumber].sounds}`);
-    formname.innerText = (`${piano_form_active[prepickform].display}`);
+    codename.innerText = (`${piano_Notes_active[picknotesnumber].display}${piano_Chords_active[pickcchordsnumber].display}`);
+    txtInput.value = (`${piano_Notes_active[picknotesnumber].sounds} ${piano_Chords_active[pickcchordsnumber].sounds}`);
+    formname.innerText = (`${piano_form_active[pickform].display}`);
+
+    if (precodes.length >100){
+        precodes = precodes.slice(50);
+    }
+
 
 }
 
@@ -262,5 +283,8 @@ if (getsavechords !== null){
     parasavechords.forEach((item) => paint_Chords(item)   
     );
 };
+
+
+
 
 

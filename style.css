@@ -73,6 +73,7 @@ header {
   font-weight: 500;
   height: 27vh;
   text-align: center;
+  margin-top: 50vh;
 }
 
 #txtInput {
@@ -151,5 +152,17 @@ header {
 
 
 .pre_code_name{
-   color:white;
+  font-size: 10vh;
+  margin-top: 3vh;
 }
+
+.pre_code_name{
+  font-size: 10vh;
+  margin-top:8vh;
+}
+
+.pre_form_name{
+  font-size: 7vh;
+  margin-top: 0.25vh;
+  }
+
