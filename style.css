@@ -69,7 +69,7 @@ header {
 
 .code_name {
   width: 100%;
-  font-size: 10vh;
+  font-size: 16vh;
   font-weight: 500;
   height: 10vh;
   text-align: center;
@@ -147,8 +147,8 @@ header {
 }
 
 .form_name {
-  font-size: 8vh;
-  margin: 3vh;
+  font-size: 10vh;
+  margin: 8vh;
 }
 
 

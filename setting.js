@@ -183,8 +183,7 @@ function start(){
     const inputString = prompt('BPM을 입력하세요 기본값: 40 bpm');
     let bpm =  60000 / parseInt(inputString);
 
-    if (bpm == NaN) {
-        bpm = 750;}
+
     if (inputString === null | inputString === ""){
         alert("값을 입력하시죠?? ^^")
         return}
