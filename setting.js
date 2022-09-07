@@ -5,6 +5,7 @@ const add = document.querySelector(".settings-page__container_title__add-chord")
 const codename = document.querySelector(".code_name");
 const formname = document.querySelector(".form_name");
 const precodename = document.querySelector(".pre_code_name");
+const preformname = document.querySelector(".pre_form_name");
 const container = document.querySelector(".settings-page__container:nth-child(2)");
 const container_notes =document.querySelectorAll(".settings-page__container-codes");
 const container_codes =document.querySelectorAll(".settings-page__container-codes");
@@ -27,15 +28,15 @@ const piano_Notes_active = [{display:'C',sounds:'C',id:Date.now()},
 {display:'F',sounds:'F',id:Date.now()},
 {display:'Gb',sounds:'G Flat',id:Date.now()},
 {display:'G',sounds:'G',id:Date.now()},
-{display:'Ab',sounds:'A Flat',id:Date.now()},
-{display:'A',sounds:'A',id:Date.now()},
+{display:'Ab',sounds:'Ae Flat',id:Date.now()},
+{display:'A',sounds:'Ae',id:Date.now()},
 {display:'Bb',sounds:'B Flat',id:Date.now()},
 {display:'B',sounds:'B',id:Date.now()},
 {display:'C#',sounds:'C sharp',id:Date.now()},
 {display:'D#',sounds:'D sharp',id:Date.now()},
 {display:'F#',sounds:'F sharp',id:Date.now()},
 {display:'G#',sounds:'G sharp',id:Date.now()},
-{display:'A#',sounds:'A sharp',id:Date.now()},
+{display:'A#',sounds:'Ae sharp',id:Date.now()},
 ];
 const piano_Notes_unactive = [];
 
@@ -49,6 +50,8 @@ const piano_Chords_unactive = [];
 const piano_form_active = [{display:'A form'},{display:'B form'}];
 
 const piano_form_unactive = [];
+
+let precodes = [-1,-1,-1];
 
 
 
@@ -177,11 +180,15 @@ function paint_Chords(code_value){
 
 function start(){
     console.log("Sdfs");
-    const inputString = prompt('BPM을 입력하세요 기본값: 40 bpm');
+    const inputString = prompt('BPM을 입력하세요');
     let bpm =  60000 / parseInt(inputString);
 
-    if (bpm == NaN) {
-        bpm = 750;}
+    if (Number.isNaN(bpm)){
+        console.log(bpm);
+        alert("숫자만 입력 가능합니다")
+        return}
+
+
     if (inputString === null | inputString === ""){
         alert("값을 입력하시죠?? ^^")
         return}
@@ -190,16 +197,27 @@ function start(){
     main_page.classList.remove(HIDDEN);
     back_icon.classList.remove(HIDDEN);
 
-    
+
     
     prechangetext();
-    setInterval(prechangetext, bpm);
-    setInterval(click, bpm);
-  
+    ab = setInterval(prechangetext, bpm);
+    bc = setInterval(changetext, bpm);
+    cd = setInterval(click, bpm);
+
 
 
     }
 
+
+function stop(){
+    console.log("done1");
+    clearInterval(ab);
+    clearInterval(bc);
+    clearInterval(cd);
+    console.log("done2");
+    precodes=[-1,-1,-1];
+    console.log("done3");
+}
 
     
 function prechangetext(){
@@ -207,15 +225,31 @@ function prechangetext(){
     const prepickcchordsnumber = Math.floor(Math.random()*piano_Chords_active.length);
     const prepickform = Math.floor(Math.random()*piano_form_active.length);
     precodename.innerText = (`${piano_Notes_active[prepicknotesnumber].display}${piano_Chords_active[prepickcchordsnumber].display}`);
-    return changetext(prepicknotesnumber,prepickcchordsnumber,prepickform);
+    preformname.innerText = (`${piano_form_active[prepickform].display}`);
+    precodes.push(prepicknotesnumber,prepickcchordsnumber,prepickform);
+    console.log(prepicknotesnumber,prepickcchordsnumber,prepickform);
+    console.log(precodes);
+
 }
 
-function changetext(prepicknotesnumber,prepickcchordsnumber,prepickform){
+function changetext(){
 
+    const picknotesnumber = precodes[precodes.length-6];
+    const pickcchordsnumber = precodes[precodes.length-5];
+    const pickform = precodes[precodes.length-4];
+    console.log(picknotesnumber);
+    console.log(pickcchordsnumber);
+    console.log(pickform);
+ 
 
-    codename.innerText = (`${piano_Notes_active[prepicknotesnumber].display}${piano_Chords_active[prepickcchordsnumber].display}`);
-    txtInput.value = (`${piano_Notes_active[prepicknotesnumber].sounds} ${piano_Chords_active[prepickcchordsnumber].sounds}`);
-    formname.innerText = (`${piano_form_active[prepickform].display}`);
+    codename.innerText = (`${piano_Notes_active[picknotesnumber].display}${piano_Chords_active[pickcchordsnumber].display}`);
+    txtInput.value = (`${piano_Notes_active[picknotesnumber].sounds} ${piano_Chords_active[pickcchordsnumber].sounds}`);
+    formname.innerText = (`${piano_form_active[pickform].display}`);
+
+    if (precodes.length >100){
+        precodes = precodes.slice(50);
+    }
+
 
 }
 
@@ -235,10 +269,10 @@ function lord_setting_page(){
         setting_icon.classList.add(HIDDEN);
     }
 
+
 }
 
 function lord_first_page(){
-    console.log("dsf");
     back_icon.classList.add(HIDDEN);
     settings_page.classList.add(HIDDEN);
     first_page.classList.remove(HIDDEN);
@@ -259,8 +293,12 @@ const getsavechords = localStorage.getItem(KEY);
 if (getsavechords !== null){
     const parasavechords = JSON.parse(getsavechords);
     piano_codes_storage = parasavechords;
-    parasavechords.forEach((item) => paint_Chords(item)   
-    );
+    parasavechords.forEach((item) => paint_Chords(item));
+    parasavechords.forEach((item) => piano_Chords_active.push(item));
 };
+
+back_icon.addEventListener("click",stop);
+
+
 
 
