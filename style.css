@@ -80,7 +80,7 @@ header {
   display: none;
 }
 
-.settings-page__title__title {
+.settings-page__title {
   display: flex;
   justify-content: center;
   font-weight: bold;
@@ -88,13 +88,6 @@ header {
   font-size: 5vw;
   margin-bottom: 5vw;
   margin-left: 7vh;
-}
-.settings-page__title {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  color: aquamarine;
-  margin-top: 1px;
 }
 
 .settings-page__container__group {
@@ -171,5 +164,5 @@ header {
 
 .settings-page {
   width: 55vw;
-  height: 95vh;
+  height: 75vh;
 }
