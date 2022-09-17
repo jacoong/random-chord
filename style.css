@@ -8,6 +8,13 @@ body {
   position: relative;
 }
 
+@keyframes rotate {
+  100%{
+    transform: rotate( 180deg );
+  }
+  }
+
+
 .main-page {
   color: white;
   width: 100%;
@@ -18,7 +25,7 @@ body {
 }
 
 .header-page__Auto-Mode {
-  background-color: #add8e5;
+  background-color: #21DF64;
   margin: 0 auto;
   cursor: pointer;
   text-align: center;
@@ -32,6 +39,11 @@ body {
   padding: 0.5vw;
   border-radius: 0.5vw;
   margin-bottom: 11vh;
+  transition: scale 0.3s ease-in-out;
+}
+
+.header-page__Auto-Mode:hover{
+  scale:105%
 }
 
 .setting-icon i {
@@ -43,6 +55,12 @@ body {
   cursor: pointer;
   font-size: 5vh;
   margin-top: 55px;
+  transition: all infinite ease-in-out;
+}
+
+.setting-icon i:hover{
+  animation: rotate 2s ease-in-out infinite;
+  scale: 110%
 }
 
 .back-icon i {
@@ -53,6 +71,11 @@ body {
   margin: 42px;
   cursor: pointer;
   font-size: 5vh;
+  transition: scale 0.3s ease-in-out;
+}
+
+.back-icon i:hover{
+  scale: 110%
 }
 
 .hidden {
@@ -108,21 +131,41 @@ header {
 }
 
 .settings-page__container-codes {
+  position: relative;
   text-align: center;
   display: inline-block;
   background-color: #444;
   color: black;
-  min-width: 8vw;
-  height: 5vw;
-  font-size: 3vw;
+  min-width: 7vw;
+  height: 4vw;
+  font-size: 2.5vw;
   font-weight: bold;
-  padding: 0.5vw;
-  line-height: 5vw;
+  padding: 0.8vw;
+  line-height: 4.5vw;
   margin-bottom: 1.25vw;
   border-radius: 0.5vw;
   margin-right: 0.75vw;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  z-index: 999;
+  transition:scale 0.3s ease-in-out;
+}
+
+.settings-page__container-codes:hover{
+  scale:110%
+}
+
+.settings-page__container-codes img {
+  position: absolute;
+  width: 2vw;
+  height: 2vw;
+  right: -0.5vw;
+  top: -0.7vw;
+  transition: scale 0.2s ease-in-out;
+}
+
+.settings-page__container-codes img:hover{
+  scale:130%;
 }
 .settings-page__container_title {
   margin: 0;
@@ -133,16 +176,26 @@ header {
   width: 15vw;
   text-align: left;
   margin-top: 1.25vw;
+  margin-bottom: 0.5vw;
 }
 
 .settings-page__container_title__add-chord {
   color: aquamarine;
   cursor: pointer;
   text-align: center;
+  margin-bottom: 0.3vw;
+  font-size: 2vw;
+}
+
+.settings-page__container_title__remove-chord {
+  color: red;
+  cursor: pointer;
+  text-align: center;
+  font-size: 2vw;
 }
 
 .activee {
-  background-color: blanchedalmond;
+  background-color: #21DF64;
 }
 
 .form_name {
@@ -166,3 +219,4 @@ header {
   width: 55vw;
   height: 75vh;
 }
+
