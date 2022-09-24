@@ -14,6 +14,8 @@ const container_codes =document.querySelectorAll(".settings-page__container-code
 const setting_icon = document.querySelector(".setting-icon");
 const settings_page = document.querySelector(".settings-page");
 const back_icon = document.querySelector(".back-icon");
+const mute_Form = document.querySelector(".bell");
+
 
 
 const HIDDEN = "hidden";
@@ -77,7 +79,7 @@ let piano_Chords_active = [
 let piano_Chords_unactive = [];
 
 
-const piano_form_active = [{display:'A form',type:'Form'},{display:'B form',type:'Form'}];
+const piano_form_active = [{display:'A form',sounds:'Ae form',type:'Form'},{display:'B form',sounds:'Be form',type:'Form'}];
 
 const piano_form_unactive = [];
 
@@ -348,7 +350,6 @@ function prechangetext(){
     preformname.innerText = (`${piano_form_active[prepickform].display}`);
     precodes.push(prepicknotesnumber,prepickcchordsnumber,prepickform);
     console.log(prepicknotesnumber,prepickcchordsnumber,prepickform);
-    console.log(precodes);
 
 }
 
@@ -363,8 +364,14 @@ function changetext(){
  
 
     codename.innerText = (`${piano_Notes_active[picknotesnumber].display}${piano_Chords_active[pickcchordsnumber].display}`);
+
+    if (mute_Form.classList.contains("mute")){
     txtInput.value = (`${piano_Notes_active[picknotesnumber].sounds} ${piano_Chords_active[pickcchordsnumber].sounds}`);
-    formname.innerText = (`${piano_form_active[pickform].display}`);
+    formname.innerText = (`${piano_form_active[pickform].display}`)
+    }else{
+    txtInput.value = (`${piano_Notes_active[picknotesnumber].sounds} ${piano_Chords_active[pickcchordsnumber].sounds} ${piano_form_active[pickform].sounds}`);
+    formname.innerText = (`${piano_form_active[pickform].display}`)   
+    };
 
     if (precodes.length >100){
         precodes = precodes.slice(50);
@@ -378,6 +385,10 @@ function changetext(){
 
 function click(){
     btnSpeak.click();
+}
+
+function handleMute(){
+    mute_Form.classList.toggle("mute");
 }
 
 
@@ -412,6 +423,7 @@ add.addEventListener("click",get_new_chords);
 remove.addEventListener("click",reveal_cancel);
 setting_icon.addEventListener("click",lord_setting_page);
 back_icon.addEventListener("click",lord_first_page);
+mute_Form.addEventListener("click",handleMute);
 
 
 const getsavechords = localStorage.getItem(KEY1);
