@@ -215,16 +215,16 @@ function clicks(item){
     }
 
 function get_new_chords(){
-    let ChordsDisplay = prompt('Chords을 입력하세요');
+    let ChordsDisplay = prompt('Put Chords you want');
 
     if (ChordsDisplay === null | ChordsDisplay === ""){
-        alert("값을 입력하시죠?? ^^")
+        alert("please put the right value!")
         return}
     else{
         ChordsDisplay
     }
 
-    let ChordsSounds = prompt("[선택] 해당 단어가 나올때 듣고 싶은 소리의 문자를 대로 입력하세요. 입력하지 않을시, 해당 단어는 문자 그대로 소리납니다.");
+    let ChordsSounds = prompt("[Option] Put the letter you want to hear when the Word would come! If you didn't put anything, it will be Pronounced itself!");
     if (ChordsSounds === null | ChordsSounds === ""){
         ChordsSounds = ChordsDisplay;
     }else{
@@ -302,17 +302,17 @@ function paint_Chords(code_value){
 
 
 function start(){
-    const inputString = prompt('BPM을 입력하세요');
+    const inputString = prompt('Please put BPM');
     let bpm =  60000 / parseInt(inputString);
 
     if (Number.isNaN(bpm)){
         console.log(bpm);
-        alert("숫자만 입력 가능합니다")
+        alert("Only Number is required")
         return}
 
 
-    if (inputString === null | inputString === ""){
-        alert("값을 입력하시죠?? ^^")
+    if (inputString === undefined | inputString === ""){
+        alert("Value is required!")
         return}
 
     first_page.classList.add(HIDDEN);
